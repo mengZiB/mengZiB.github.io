@@ -1,0 +1,549 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>用于blog的快速站点搭建 | 9AM</title><meta name="keywords" content="hexo"><meta name="author" content="9AM"><meta name="copyright" content="9AM"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言和准备 每个计算机专业学生在学习过程中，都会有一些心得想要记录，但这个专业平时除了基础课更多是和代码在打交道，采用纸质手写笔记是效率非常低的（况且手写代码真的丑），所以技术博客非常有必要。（好像每个计算机专业学生都会折腾这玩意） 那么问题来了，为啥要自己搭建呢，呃这里面不乏动手喜欢折腾，比较酷的元素QWQ，其实csdn，简书，知乎等地方未尝不可，但界面广告多和文章不过审太搞人心态了，。。所以那">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用于blog的快速站点搭建">
+<meta property="og:url" content="http://www.9am.ren/2021/02/08/%E5%BF%AB%E9%80%9F%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="9AM">
+<meta property="og:description" content="前言和准备 每个计算机专业学生在学习过程中，都会有一些心得想要记录，但这个专业平时除了基础课更多是和代码在打交道，采用纸质手写笔记是效率非常低的（况且手写代码真的丑），所以技术博客非常有必要。（好像每个计算机专业学生都会折腾这玩意） 那么问题来了，为啥要自己搭建呢，呃这里面不乏动手喜欢折腾，比较酷的元素QWQ，其实csdn，简书，知乎等地方未尝不可，但界面广告多和文章不过审太搞人心态了，。。所以那">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/hawk9am/blogimage/raw/master/img/AZEHO`REGJXR[}YV2`}OMPR.png">
+<meta property="article:published_time" content="2021-02-08T11:39:50.000Z">
+<meta property="article:modified_time" content="2021-02-09T16:02:07.412Z">
+<meta property="article:author" content="9AM">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/hawk9am/blogimage/raw/master/img/AZEHO`REGJXR[}YV2`}OMPR.png"><link rel="shortcut icon" href="https://gitee.com/hawk9am/blogimage/raw/master/img/IMG_20210208_162317.jpg"><link rel="canonical" href="http://www.9am.ren/2021/02/08/%E5%BF%AB%E9%80%9F%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta name="yandex-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#2E8B57&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#2E8B57&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-02-10 00:02:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://gitee.com/hawk9am/blogimage/raw/master/img/1611929733861.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-bars"></i><span> 目录</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/hawk9am/blogimage/raw/master/img/AZEHO`REGJXR[}YV2`}OMPR.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">9AM</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-bars"></i><span> 目录</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">用于blog的快速站点搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-08T11:39:50.000Z" title="发表于 2021-02-08 19:39:50">2021-02-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-09T16:02:07.412Z" title="更新于 2021-02-10 00:02:07">2021-02-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言和准备">前言和准备</h2>
+<p>每个计算机专业学生在学习过程中，都会有一些心得想要记录，但这个专业平时除了基础课更多是和代码在打交道，采用纸质手写笔记是效率非常低的（况且手写代码真的丑），所以技术博客非常有必要。（好像每个计算机专业学生都会折腾这玩意）</p>
+<p>那么问题来了，为啥要自己搭建呢，呃这里面不乏动手喜欢折腾，比较酷的元素QWQ，其实csdn，简书，知乎等地方未尝不可，但界面广告多和文章不过审太搞人心态了，。。所以那就自己动手搭建一个。</p>
+<hr>
+<p>采用Github+hexo框架或者Gitee+hexo框架 区别GitHub服务器在国外响应速度不如Gitee快，但GitHub使用个性化域名是免费的，而Gitee在开启Gitee page服务后需要花钱升级到Gitee Pro才能使用自己的域名。</p>
+<p>github仓库提供300M的存储量对于静态页面部署来说完全够用，首先你需要本丢创建一个文件夹存放资源文件</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209231328.png" alt=""></p>
+<p>然后需要一个github账号和仓库创建</p>
+<img src="https://gitee.com/hawk9am/blogimage/raw/master/img/github .png" style="zoom:33%;" />
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/461.png" alt=""></p>
+<p>这里仓库名字格式是<code>你的github名字.github.io</code>我这里创建过了，所以它会提示同名重复</p>
+<h2 id="环境搭建">环境搭建</h2>
+<p>因为我是在Windows上部署的，所以不写如何在Linux上搭建。</p>
+<ol>
+<li>
+<p>Node.js</p>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js官网</a></p>
+<p>选择稳定版本</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/AZEHO%60REGJXR%5B%7DYV2%60%7DOMPR.png" alt=""></p>
+<p>检查是否成功，终端下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/P3QGUQ6OFMOH(C%5BK96%7BO)M4.png" alt=""></p>
+<p><strong>设置npm在安装全局模块时的路径和环境变量</strong></p>
+<p>因为如果不设置的话，安装模块的时候就会把模块装到C盘，占用C盘的空间，并且有可能安装好hexo后却无法使用，所以需要设置一下：</p>
+<p>在 nodejs 文件夹中新建两个空文件夹 node_cache、node_global</p>
+</li>
+</ol>
+<p>​		然后cmd输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;D:\nodejs\node_global&quot;</span><br><span class="line">npm config set cache &quot;D:\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
+<p>​	<strong>配置环境变量</strong></p>
+<p>​	需要在设置——&gt;编辑系统环境变量里，path一栏新建 ，地址是node.js安装的目录</p>
+<p>​	<img src="https://gitee.com/hawk9am/blogimage/raw/master/img/37B@7JSCSGN@OK%7B9TRX%5DR2G.png" alt=""></p>
+<p>​	<img src="https://gitee.com/hawk9am/blogimage/raw/master/img/J_V_JUKSZYS%60%7BP@0FD%60%5B$A5.png" alt=""></p>
+<p>​		配置npm在安装全局模块时的路径和缓存cache的路径</p>
+<p>​		 在node.js安装目录下新建 <code>node_global</code> ,<code>node_cache</code>两个文件夹，然后在cmd命令下执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;D:\Program Files\nodejs\node_global&quot;</span><br><span class="line"></span><br><span class="line">npm config set cache &quot;D:\Program Files\nodejs\node_cache&quot;</span><br><span class="line">&#x2F;&#x2F;注意这里的地址一定要换成自己的</span><br></pre></td></tr></table></figure>
+<p>然后在环境变量 -&gt; 系统变量中新建一个变量名为<code> NODE_PATH</code>， 值为<code>D:\node.js\node_global\node_modules</code></p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/2C1MHWQF@WCJT_1RO69U8UE.png" alt=""></p>
+<p>​		 在cmd命令下执行<code>npm install webpack -g</code>然后安装成功后可以看到自定义的两个文件夹已生效</p>
+<ol start="2">
+<li>
+<p>hexo</p>
+<p>安装hexo框架</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>如果想检查是否安装成功可以去node的目录下查看</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209231702.png" alt=""></p>
+<p>然后在文件夹下打开 Git Bush终端 初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>会在当前目录下初始化文件</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209231851.png" alt=""></p>
+<p>静态部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209232101.png" alt=""></p>
+<p>开启端口，在浏览器输入如下地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209232212.png" alt=""></p>
+<p>看见这说明hexo框架应用成功了</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209232326.png" alt=""></p>
+<h2 id="站点配置">站点配置</h2>
+<p>其实到这已经搭建完毕了剩下只需配置（也是最喜欢折腾的环节）</p>
+<p>打开根目录下<code>_config.yml</code>文件，这里不建议用记事本打开，建议用vscode打开项目，便于管理和改写</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209232746.png" alt=""></p>
+<p>ctrl+f 搜索关键字 <code>deploy:</code>然后做如下修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:&#x2F;&#x2F;github.com&#x2F;usr&#x2F;usr.github.io.git  #你的仓库地址</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>然后在Git Bush终端下载Git部署工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>依次执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   #清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</span><br><span class="line">hexo d       #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure>
+<p>然后打开浏览器   <a href="https://link.zhihu.com/?target=https%3A//fengye97.github.io/">https://xxx.github.io</a> 就是网站地址</p>
+<p>如果想用自己的个性化域名，在代码仓库页右边settings选项，找到这里输入域名即可，会强制https访问</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209233304.png" alt=""></p>
+<p>关于主题选择 hexo官方有很多种，都是开源的项目，如果你熟悉HTML,CSS前端的特效之类可以自己造轮子写一个，我审美不太行，所以一开始方向就不是前端，不会写什么特效，但基础的HTML和CSS知识是有的，这对后面魔改主题有帮助，</p>
+<p>这里有hexo框架的官方文档  <a target="_blank" rel="noopener" href="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209233923.png">hexo</a></p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209233923.png" alt=""></p>
+<p>主题选择  <a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a></p>
+<p>这里我推荐新手使用next主题，简洁抗折腾</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209234900.png" alt=""></p>
+<p>这是next的Githubc仓库地址  <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">next</a>   git clone 下来放到 站点目录的theme文件夹中 修改文件夹名字为<code>next</code></p>
+<p>然后 修改<code>_config.yml</code>文件中<code>theme: next</code></p>
+<p>关于使用说明文档和魔改</p>
+<p>详见next仓库里的README</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209234918.png" alt=""></p>
+<p>关于写作需要markdown语法的基础知识</p>
+<p>添加文章的标签 <code>hexo new page tag</code> ，在<code>source</code> ,文件夹里会多出个有tag文件夹，打开<code>index.md</code></p>
+<p>添加一行 type：tag</p>
+<p>添加分类 <code>coategories</code> 同上</p>
+<p>头部你可以这么些写</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210209235731.png" alt=""></p>
+<p>到这基本就结束了。关于美化我实在是写不动了，下面这些是从某个老哥那扒来的</p>
+<h2 id="基础美化">基础美化</h2>
+<p>目录</p>
+<ol>
+<li>设置菜单</li>
+<li>设置建站时间</li>
+<li>设置头像</li>
+<li>网站图标设置</li>
+<li>设置动态背景</li>
+<li>设置背景图片</li>
+<li>主页文章添加阴影效果</li>
+<li>添加顶部加载条</li>
+<li>设置预览摘要</li>
+<li>设置侧边栏显示效果</li>
+<li>侧边栏推荐阅读</li>
+<li>添加社交链接</li>
+<li>设置博文内链接为蓝色</li>
+<li>显示文章字数和阅读时长</li>
+<li>显示站点文章总字数（另一种统计站点总字数的方法）</li>
+<li>设置文章末尾”本文结束”标记</li>
+<li>文章末尾添加版权说明</li>
+<li>添加访问量统计</li>
+<li>添加评论功能</li>
+<li>添加Fork me on Github</li>
+<li>安装Markdown编译器</li>
+<li>安装RSS插件</li>
+<li>项目主页添加README</li>
+<li>忽略要编译的文件</li>
+<li>代码块样式自定义</li>
+<li>支持mathjax公式</li>
+<li>图床网站</li>
+<li>本地搜索</li>
+<li>Hexo博客提交百度和Google收录</li>
+<li>博文置顶</li>
+<li>添加打赏</li>
+<li>添加分享（未完成）</li>
+<li>图片可点击放大查看，放大后可关闭（fancybox可能有点问题，暂时未实现）</li>
+</ol>
+<h2 id="1-设置菜单">1. 设置菜单</h2>
+<p>打开主题配置文件即themes/next下的_config.yml，查找menu，将前面的#删除就行了：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home                      #首页</span><br><span class="line">  archives: /archives/ || archive      #归档</span><br><span class="line">  categories: /categories/ || th       #分类</span><br><span class="line">  tags: /tags/ || tags                 #标签</span><br><span class="line">  about: /about/ || user               #关于</span><br><span class="line">  resources: /resources/ || download   #资源</span><br><span class="line">  #schedule: /schedule/ || calendar    #日历</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap    #站点地图，供搜索引擎爬取</span><br><span class="line">  #commonweal: /404/ || heartbeat      #腾讯公益404</span><br></pre></td></tr></table></figure>
+<p>“||”前面的是目标链接，后面的是图标名称，next使用的图标全是<a href="https://link.zhihu.com/?target=http%3A//www.fontawesome.com.cn/faicons/%23web-application">图标库 - Font Awesome 中文网</a>这一网站的，有想用的图标直接在fontawesome上面找图标的名称就行。resources是我自己添加的。</p>
+<p>新添加的菜单需要翻译对应的中文，打开theme/next/languages/zh-CN.yml，在menu下设置：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  resources: 资源</span><br><span class="line">  search: 搜索</span><br></pre></td></tr></table></figure>
+<p>在根目录下打开Git Bash，输入如下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;categories&quot;</span><br><span class="line">hexo new page &quot;tags&quot;</span><br><span class="line">hexo new page &quot;about&quot;</span><br><span class="line">hexo new page &quot;resources&quot;</span><br></pre></td></tr></table></figure>
+<p>此时在根目录的sources文件夹下会生成categories、tags、about、resources四个文件，每个文件中有一个<code>index.md</code>文件，修改内容分别如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2020-02-10 22:07:08</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-02-10 22:07:08</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">title: 关于</span><br><span class="line">date: 2020-02-10 22:07:08</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">title: 资源</span><br><span class="line">date: 2020-02-10 22:07:08</span><br><span class="line">type: &quot;resources&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>注：如果有启用评论，默认页面带有评论。需要关闭的话，添加字段comments并将值设置为false。</p>
+<h2 id="2-设置建站时间">2. 设置建站时间</h2>
+<p>打开主题配置文件即themes/next下的_config.yml，查找since：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">footer:</span><br><span class="line">  # Specify the date when the site was setup. If not defined, current year will be used.</span><br><span class="line">  since: 2020-02   #建站时间</span><br></pre></td></tr></table></figure>
+<h2 id="3-设置头像">3. 设置头像</h2>
+<p>打开主题配置文件即themes/next下的_config.yml，查找avatar，url后是图片的链接地址：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Sidebar Avatar</span><br><span class="line">avatar:</span><br><span class="line">  # Replace the default image and set the url here.</span><br><span class="line">  url: /images/avatar.gif   #图片的位置，也可以是http://xxx.com/avatar.png</span><br><span class="line">  # If true, the avatar will be dispalyed in circle.</span><br><span class="line">  rounded: true   #头像展示在圈里</span><br><span class="line">  # If true, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: false  #头像随光标旋转</span><br></pre></td></tr></table></figure>
+<p>然后将你要的头像图片复制到themes/next/source/images里，重命名为avatar.png。</p>
+<h2 id="4-网站图标设置">4. 网站图标设置</h2>
+<p>我是在这个网站找的图标，免费的图标素材网站：<a href="https://link.zhihu.com/?target=https%3A//www.easyicon.net/1220579-maple_leaf_icon.html">Easyicon</a></p>
+<p>下载16x16和32x32的图标后，打开主题配置文件，查找favicon，只要修改small和medium为你的图标路径：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon-16x16.png</span><br><span class="line">  medium: /images/favicon-32x32.png</span><br><span class="line">  apple_touch_icon: /images/apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br><span class="line">  #android_manifest: /images/manifest.json</span><br><span class="line">  #ms_browserconfig: /images/browserconfig.xml</span><br></pre></td></tr></table></figure>
+<h2 id="5-设置动态背景">5. 设置动态背景</h2>
+<h3 id="5-1-canvas-nest-风格">5.1 canvas nest 风格</h3>
+<p>效果图：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-0948505c3e3161c767466b90c2649aa2_720w.jpg" alt="img"></p>
+<p>在themes/next目录下打开Git Bash，输入：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest</span><br></pre></td></tr></table></figure>
+<p>打开主题配置文件即themes/next下的_config.yml，找到canvas-nest，将enable：false改为true：（<strong>如果找不到canvas-nest，可能是文件修改了，试试将下面的代码复制粘贴到themes/next中</strong>）</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Canvas-nest</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-canvas-nest</span><br><span class="line"># For more information: https://github.com/hustcc/canvas-nest.js</span><br><span class="line">canvas_nest:</span><br><span class="line">  enable: true</span><br><span class="line">  onmobile: true # Display on mobile or not</span><br><span class="line">  color: &quot;0,0,255&quot; # RGB values, use `,` to separate</span><br><span class="line">  opacity: 0.5 # The opacity of line: 0~1</span><br><span class="line">  zIndex: -1 # z-index property of the background</span><br><span class="line">  count: 99 # The number of lines</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-JavaScript-3D-library风格">5.2 JavaScript 3D library风格</h3>
+<p>在themes/next目录下打开Git Bash，输入：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-three source/lib/three</span><br></pre></td></tr></table></figure>
+<p>打开主题配置文件即themes/next下的_config.yml，找到three，这里有三种风格，可以试一下看看喜欢哪种风格，直接将false改为true就行了，我已经选了canvas-nest，就没有选这种风格：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># JavaScript 3D library.</span><br><span class="line"># Dependencies: https://github.com/theme-next/theme-next-three</span><br><span class="line">three:</span><br><span class="line">  enable: true</span><br><span class="line">  three_waves: false</span><br><span class="line">  canvas_lines: false</span><br><span class="line">  canvas_sphere: false</span><br></pre></td></tr></table></figure>
+<h2 id="6-设置背景图片">6. 设置背景图片</h2>
+<p>打开主题配置文件即themes/next下的_config.yml，将 style: source/_data/styles.styl 取消注释：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line">  style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
+<p>打开根目录Blog/source创建文件_data/styles.styl，添加以下内容：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 添加背景图片</span><br><span class="line">body &#123;</span><br><span class="line">      background: url(images/background.png);//自己喜欢的图片地址</span><br><span class="line">      background-size: cover;</span><br><span class="line">      background-repeat: no-repeat;</span><br><span class="line">      background-attachment: fixed;</span><br><span class="line">      background-position: 50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7-主页文章添加阴影效果">7. 主页文章添加阴影效果</h2>
+<p>打开themes/next/source/css/_common/conponents/post/post.styl，修改.post-block，如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.use-motion &#123;</span><br><span class="line">  if (hexo-config(&#x27;motion.transition.post_block&#x27;)) &#123;</span><br><span class="line">    .post-block &#123;</span><br><span class="line">      opacity: 0;</span><br><span class="line">      margin-top: 60px;</span><br><span class="line">      margin-bottom: 60px;</span><br><span class="line">      padding: 25px;</span><br><span class="line">      background:rgba(255,255,255,0.9) none repeat scroll !important;</span><br><span class="line">      -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">      -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    .pagination, .comments&#123;</span><br><span class="line">      opacity: 0;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>还有一种方法打开Blog/source/_date/style.styl文件，添加以下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line">.post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br></pre></td></tr></table></figure>
+<h2 id="8-添加顶部加载条">8. 添加顶部加载条</h2>
+<p>在themes/next目录下打开Git Bash，输入：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/theme-next-pace source/lib/pace</span><br></pre></td></tr></table></figure>
+<p>打开<strong>主题配置文件</strong>即themes/next下的_config.yml，找到pace，将enable：false改为true，你还可以选择类型（theme）：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: true</span><br><span class="line">  # Themes list:</span><br><span class="line">  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span><br><span class="line">  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span><br><span class="line">  theme: minimal</span><br></pre></td></tr></table></figure>
+<h2 id="9-设置预览摘要">9. 设置预览摘要</h2>
+<p>next（v7.7.1）已经没有如下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure>
+<p>所以不需要设置，只要我们在文章中插入 <a id="more"></a>，该标签之上的是摘要，之后的内容不可见，需点击全文阅读按钮：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="10-设置侧边栏显示效果">10. 设置侧边栏显示效果</h2>
+<p>打开<strong>主题配置文件</strong>即themes/next下的_config.yml，找到Sidebar Settings，设置：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  # Sidebar Position. #设置侧边栏位置</span><br><span class="line">  position: left</span><br><span class="line">  #position: right</span><br><span class="line"></span><br><span class="line">  #  - post    默认显示模式</span><br><span class="line">  #  - always  一直显示</span><br><span class="line">  #  - hide    初始隐藏</span><br><span class="line">  #  - remove  移除侧边栏</span><br><span class="line">  display: post</span><br></pre></td></tr></table></figure>
+<h2 id="11-侧边栏推荐阅读">11. 侧边栏推荐阅读</h2>
+<p>打开<strong>主题配置文件</strong>即themes/next下的_config.yml，搜索links（里面写你想要的链接）：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">links_settings:</span><br><span class="line">  icon: link</span><br><span class="line">  title: 链接网站  #修改名称</span><br><span class="line"></span><br><span class="line">links:</span><br><span class="line">  #Title: http://yoursite.com</span><br><span class="line">  百度: https://baidu.com</span><br><span class="line">  鱼C论坛: https://fishc.com.cn</span><br></pre></td></tr></table></figure>
+<h2 id="12-添加社交链接">12. 添加社交链接</h2>
+<p>打开<strong>主题配置文件</strong>即themes/next下的_config.yml，搜索social：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/fengye97 || github</span><br><span class="line">  E-Mail: mailto:yinhongfei1018@163.com || envelope</span><br><span class="line">  知乎: https://www.zhihu.com/people/mai-nv-hai-de-xiao-huo-chai-35-19 || gratipay</span><br><span class="line">  CSDN: https://https://blog.csdn.net/Later_001 || codiepie</span><br></pre></td></tr></table></figure>
+<p>“||”前面的是链接，后面的是<a href="https://link.zhihu.com/?target=http%3A//www.fontawesome.com.cn/faicons/%23web-application"> FontAwesome</a>图标名称。</p>
+<h2 id="13-设置博文内链接为蓝色">13. 设置博文内链接为蓝色</h2>
+<p>打开themes/next/source/css/_common/components/post/post.styl文件，将下面的代码复制到文件最后：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.post-body p a&#123;</span><br><span class="line">     color: #0593d3;</span><br><span class="line">     border-bottom: none;</span><br><span class="line">     &amp;:hover &#123;</span><br><span class="line">       color: #0477ab;</span><br><span class="line">       text-decoration: underline;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>重新部署一下后，效果如下图：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-637b3019539b4943151ca472582c90cc_720w.jpg" alt="img"></p>
+<h2 id="14-显示文章字数和阅读时长">14. 显示文章字数和阅读时长</h2>
+<p>从根目录Blog打开Git Bash，执行下面的命令，安装插件：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure>
+<p>然后打开**站点配置文件，**在文件末尾加上下面的代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true                # 文章字数统计</span><br><span class="line">  time: true                   # 文章阅读时长</span><br><span class="line">  total_symbols: true          # 站点总字数统计</span><br><span class="line">  total_time: true             # 站点总阅读时长</span><br><span class="line">  exclude_codeblock: false     # 排除代码字数统计</span><br></pre></td></tr></table></figure>
+<p>效果如下图：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-6691afc39f011c010bd0d9e054b50e75_720w.jpg" alt="img"></p>
+<h2 id="15-显示站点文章总字数（另一种统计站点总字数的方法）">15. 显示站点文章总字数（另一种统计站点总字数的方法）</h2>
+<p>从根目录Blog打开Git Bash，执行下面的命令，安装插件：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure>
+<p>然后在/themes/next/layout/_partials/footer.swig文件尾部加上：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;theme-info&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;powered-by&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;span class=&quot;post-count&quot;&gt;博客全站共&#123;&#123; totalcount(site) &#125;&#125;字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="16-设置文章末尾”本文结束”标记">16. 设置文章末尾”本文结束”标记</h2>
+<p>在路径/themes/next/layout/_macro 中新建 passage-end-tag.swig 文件,并添加以下内容：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">        &lt;div style=&quot;text-align:center;color: #ccc;font-size:24px;&quot;&gt;-------------本文结束&lt;i class=&quot;fa fa-paw&quot;&gt;&lt;/i&gt;感谢您的阅读-------------&lt;/div&gt;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>接着打开/themes/next/layout/_macro/post.swig文件，在post-footer前添加代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if not is_index and theme.passage_end_tag.enabled %&#125;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;% include &#x27;passage-end-tag.swig&#x27; %&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>具体位置如下图：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-a449da45307774c93857b03b6585a0b7_720w.jpg" alt="img"></p>
+<p>然后打开<strong>主题配置文件</strong>（_config.yml)，在末尾添加：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 文章末尾添加“本文结束”标记</span><br><span class="line">passage_end_tag:</span><br><span class="line">  enabled: true</span><br></pre></td></tr></table></figure>
+<p>完成以上设置之后，在每篇文章之后都会添加如下效果图的样子：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-22e980312c1b9c433e642757dea7e91b_720w.jpg" alt="img"></p>
+<h2 id="17-文章末尾添加版权说明">17. 文章末尾添加版权说明</h2>
+<p>查找<strong>主题配置文件</strong>themes/next/_config.yml中的creative_commons：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: false</span><br><span class="line">  post: true  # 将false改为true即可显示版权信息</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-8539d1dd82bbb3b295b631402ffeeb49_720w.jpg" alt="img"></p>
+<h2 id="18-添加访问量统计">18. 添加访问量统计</h2>
+<p>打开<strong>主题配置文件</strong>即themes/next下的_config.yml，找到busuanzi_count，改为true：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+<p>打开/themes/next/layout/_partials/footer.swig，在最后添加如下内容：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.busuanzi_count.enable %&#125;</span><br><span class="line">    &lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;</span><br><span class="line">    &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">    &lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;总访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人&lt;/span&gt;</span><br><span class="line">    &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&lt;!-- 不蒜子计数初始值纠正 --&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line"></span><br><span class="line">    var int = setInterval(fixCount, 50);  // 50ms周期检测函数</span><br><span class="line">    var countOffset = 20000;  // 初始化首次数据</span><br><span class="line"></span><br><span class="line">    function fixCount() &#123;            </span><br><span class="line">       if (document.getElementById(&quot;busuanzi_container_site_pv&quot;).style.display != &quot;none&quot;)</span><br><span class="line">        &#123;</span><br><span class="line">            $(&quot;#busuanzi_value_site_pv&quot;).html(parseInt($(&quot;#busuanzi_value_site_pv&quot;).html()) + countOffset); </span><br><span class="line">            clearInterval(int);</span><br><span class="line">        &#125;                  </span><br><span class="line">        if ($(&quot;#busuanzi_container_site_pv&quot;).css(&quot;display&quot;) != &quot;none&quot;)</span><br><span class="line">        &#123;</span><br><span class="line">            $(&quot;#busuanzi_value_site_uv&quot;).html(parseInt($(&quot;#busuanzi_value_site_uv&quot;).html()) + countOffset); // 加上初始数据 </span><br><span class="line">            clearInterval(int); // 停止检测</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">       	</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="19-添加评论功能">19. 添加评论功能</h2>
+<h3 id="19-1-注册安装">19.1 注册安装</h3>
+<p>我采用的是来必力，具体过程很简单，打开官网：<a href="https://link.zhihu.com/?target=http%3A//livere.com/">Welcome to LiveRe.com</a></p>
+<p>注册账号：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-c30f176fdfb32b60b281cbda3d9d3ef8_720w.jpg" alt="img"></p>
+<p>然后发送邮箱验证码，输入验证码验证，完成注册后点击上方<strong>安装：</strong></p>
+<p><img src="https://pic2.zhimg.com/80/v2-72c5684e3347f69eea26d0e39bce026d_720w.jpg" alt="img"></p>
+<p>选择免费的现在安装，会弹出一个框让你填网站的信息：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-e97bae324c5c0a7e218d5bdcc107cfc2_720w.jpg" alt="img"></p>
+<p>然后获取代码：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-6a1dc9f416337cf185846ab0835386f4_720w.jpg" alt="img"></p>
+<p>将data-uid后的代码复制，然后打开主题配置文件_config.yml，找到livere_uid，将代码复制到其后即可：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere_uid: &quot;你的代码&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="19-2-设置提醒">19.2 设置提醒</h3>
+<p>当有新评论出现时，通过邮箱提醒，点击右上角-&gt;管理页面-&gt;评论提醒：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-1682aedc503a43caea0687cc1bb3e305_720w.jpg" alt="img"></p>
+<p>完成后效果如图：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-01b42e4056c2ff1520d3723762707699_720w.jpg" alt="img"></p>
+<h2 id="20-添加Fork-me-on-Github">20. 添加Fork me on Github</h2>
+<p>有两种，分别是：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-0b21691ed6309ea63de8913dd235310d_720w.jpg" alt="img"></p>
+<p><img src="https://pic4.zhimg.com/80/v2-4ed720c24acbae939eaf72bb236b478b_720w.jpg" alt="img"></p>
+<p>选择你喜欢的类型，打开<a href="https://link.zhihu.com/?target=http%3A//tholman.com/github-corners/">小猫</a>或者<a href="https://link.zhihu.com/?target=https%3A//github.blog/2008-12-19-github-ribbons/">字</a>，复制代码添加到themes/next/layout/_layout.swig文件中，放在<div class="headband"></div>后面：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;a href=&quot;https://github.com/fengye97&quot; class=&quot;github-corner&quot; aria-label=&quot;View source on GitHub&quot;&gt;&lt;s</span><br></pre></td></tr></table></figure>
+<h2 id="21-安装Markdown编译器">21. 安装Markdown编译器</h2>
+<p>可以看这篇文章然后选一个适合的文本编译器：<a href="https://link.zhihu.com/?target=https%3A//blog.csdn.net/davidhzq/article/details/100815332">几款主流好用的markdown编辑器介绍</a></p>
+<p>我是用的Windows系统，所以我用的是MarkdownPad2，下载地址：<a href="https://link.zhihu.com/?target=http%3A//www.markdownpad.com/">The Markdown Editor for Windows</a>，默认安装就行</p>
+<p>如果是win10系统还需要安装一个组件 **awesomium_v1.6.6_sdk_win，**下载链接：链接：<a href="https://link.zhihu.com/?target=https%3A//pan.baidu.com/s/1UJRtOBF8vj19ikOq4452sQ">https://pan.baidu.com/s/1UJRtOBF8vj19ikOq4452sQ</a> 提取码：yd8k</p>
+<p>下载完<strong>awesomium_v1.6.6_sdk_win</strong>默认安装就行</p>
+<h2 id="22-安装RSS插件">22. 安装RSS插件</h2>
+<p>为什么要安装RSS插件呢？不了解的可以看看这篇文章：<a href="https://link.zhihu.com/?target=http%3A//www.netshop168.com/article-85934.html">rss订阅是什么意思?为什么要使用RSS?</a>简单来说，RSS是一种协议，允许网站将其内容或其部分内容提供给其他网站或应用程序。通过使用RSS，可以节省宝贵的时间，并将各个站点提供的新闻和信息组织到一个中心点进行查看，也可以通过从使用RSS联合其内容的其他站点导入新闻来向你的站点添加新闻。</p>
+<h3 id="（1）安装hexo-generator-feed插件">（1）安装hexo-generator-feed插件</h3>
+<p>RSS需要有一个Feed链接，而这个链接需要靠hexo-generator-feed插件来生成，所以第一步需要添加插件，在Blog根目录打开Git Bash执行安装指令：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<h3 id="（2）配置feed信息">（2）配置feed信息</h3>
+<p>在<strong>站点配置文件</strong>末尾加上如下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: rss2</span><br><span class="line">  path: rss2.xml</span><br><span class="line">  limit: 10</span><br><span class="line">  hub:</span><br><span class="line">  content: &#x27;true&#x27;</span><br></pre></td></tr></table></figure>
+<h3 id="（3）配置rss">（3）配置rss</h3>
+<p>打开**主题配置文件，**搜索rss，将前面的#去掉：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">follow_me:</span><br><span class="line">  #Twitter: https://twitter.com/username || twitter</span><br><span class="line">  #Telegram: https://t.me/channel_name || telegram</span><br><span class="line">  微信: /images/wechat_channel.jpg || wechat</span><br><span class="line">  RSS: /atom.xml || rss</span><br></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-e31964bed191136716e02326589e15c3_720w.jpg" alt="img"></p>
+<h2 id="23-项目主页添加README">23. 项目主页添加README</h2>
+<p>在建立Github上建立自己的博客仓库的时候，没有生成README文件，这样使得其他人无法知道我们这个仓库是做什么，即我们的这个仓库缺少一个说明文件；但是如果直接使用命令hexo n README，再部署至远程的时候，hexo会将它解析为html文件，这不是我们想要的。</p>
+<p>因此，解决方式是在路径Blog\source下手动新建README.md注意这里的后缀是.mdown，Mardownpad2可以将文件保存为.mdown后缀文件；然后再在这个新建文件中写README即可。再之后hexo g会把它复制到public文件夹，而不会被解析成html文件，发布在博客中。</p>
+<p>也可以参考第24项，在根目录Blog/source 目录下添加一个 <a target="_blank" rel="noopener" href="http://README.md">README.md</a> 文件，修改站点配置文件 _config.yml ，将 skip_render 参数的值设置为:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip_render: README.md</span><br></pre></td></tr></table></figure>
+<h2 id="24-忽略要编译的文件">24. 忽略要编译的文件</h2>
+<p>搜索引擎确认网站所有权时往往会提供一个html文件来进行验证，要是这个文件被渲染了，验证自然就会失败了。或者，有时候会有一些文件不希望Hexo渲染的，因此有必要针对某个文件或者目录进行排除。Hexo的配置文件中提供了配置项skip_render。只有source目录下的文件才会发布到public（能够在网络上访问到），因此Hexo只渲染source目录下的文件。skip_render参数设置的路径是相对于source目录的路径。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">skip_render:   #部署时不包含的文件</span><br><span class="line"></span><br><span class="line">#单个文件</span><br><span class="line">skip_render: hello.html</span><br><span class="line"></span><br><span class="line">#单个文件夹下全部文件</span><br><span class="line">skip_render: test/* </span><br><span class="line"></span><br><span class="line">#单个文件夹下指定类型文件</span><br><span class="line">skip_render: test/*.md  </span><br><span class="line"></span><br><span class="line">#单个文件夹下全部文件以及子目录</span><br><span class="line">skip_render: test/**  </span><br><span class="line"></span><br><span class="line">#跳过多个目录，或者多个文件</span><br><span class="line">skip_render: [&#x27;*.html&#x27;, demo/**, test/*]</span><br></pre></td></tr></table></figure>
+<h2 id="25-代码块样式自定义">25. 代码块样式自定义</h2>
+<p>打开根目录Blog/source/_data/styles.styl，添加以下内容：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">code &#123;</span><br><span class="line">    color: #ff7600;</span><br><span class="line">    background: #fbf7f8;</span><br><span class="line">    margin: 2px;</span><br><span class="line">&#125;</span><br><span class="line">// 大代码块的自定义样式</span><br><span class="line">.highlight, pre &#123;</span><br><span class="line">    margin: 5px 0;</span><br><span class="line">    padding: 5px;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">&#125;</span><br><span class="line">.highlight, code, pre &#123;</span><br><span class="line">    border: 1px solid #d6d6d6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果图：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-551527018a7813118ca9074691fab82a_720w.jpg" alt="img"></p>
+<h2 id="26-支持mathjax公式">26. 支持mathjax公式</h2>
+<p>打开<strong>主题配置文件</strong>，搜索mathjax：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">    enable: true   #将false改为true</span><br><span class="line">    mhchem: false  #用来写化学方程式</span><br></pre></td></tr></table></figure>
+<h2 id="27-图床网站">27. 图床网站</h2>
+<p>推荐七牛云，免费网站，快速，方便，或者可以看看这篇文章选一个合适的网站：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35270383">软件小编：盘点一下免费好用的图床</a></p>
+<p>网站：<a href="https://link.zhihu.com/?target=https%3A//www.qiniu.com/%3Futm_campaign%3DSEM%26utm_content%3Dpinzhuan%26utm_medium%3Dpinzhuan%26utm_source%3DbaiduSEM%26utm_term%3Dpinzhuan">七牛云</a>，后面我再写一篇关于如何注册使用七牛云存储图片的文章吧，我先研究研究。</p>
+<h2 id="28-本地搜索">28. 本地搜索</h2>
+<p>打开cmd安装插件：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search</span><br></pre></td></tr></table></figure>
+<p>查找主题配置文件themes/next/_config.yml中的local_search ：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">  enable: true</span><br><span class="line">  trigger: manual   #手动，按回车键或搜索按钮触发搜索</span><br></pre></td></tr></table></figure>
+<h2 id="29-Hexo博客提交百度和Google收录">29. Hexo博客提交百度和Google收录</h2>
+<p>这篇文章写得很详细：<a href="https://link.zhihu.com/?target=https%3A//www.jianshu.com/p/f8ec422ebd52">Hexo博客提交百度和Google收录</a></p>
+<h2 id="30-博文置顶">30. 博文置顶</h2>
+<h3 id="（1）安装插件">（1）安装插件</h3>
+<p>在根目录Blog打开Git Bash，执行下面的命令：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+<h3 id="（2）设置置顶标志">（2）设置置顶标志</h3>
+<p>打开blog/themes/next/layout/_macro目录下的post.swig文件，定位到<div class="post-meta">标签下，插入如下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="（3）在文章中添加top">（3）在文章中添加top</h3>
+<p>然后在需要置顶的文章的Front-matter中加上top: true即可，如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line"></span><br><span class="line">top: true</span><br><span class="line"></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-9ab04ff8d13761343e6b12057d0288ec_720w.jpg" alt="img"></p>
+<h2 id="31-添加打赏">31. 添加打赏</h2>
+<p>next（v7.7.1）已经有打赏功能，只要准备好微信和支付宝二维码，具体操作：<a href="https://link.zhihu.com/?target=https%3A//jingyan.baidu.com/article/b907e627b641b646e6891c6b.html">制作微信二维码收款</a>，很简单我就不详细说了。</p>
+<p>打开<strong>主题配置文件</strong>，查找reward：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">reward_settings:</span><br><span class="line">  enable: true   #改为true</span><br><span class="line">  animation: false</span><br><span class="line">  comment: 原创技术分享，您的支持将鼓励我继续创作</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">  wechatpay: /images/wechatpay.png   #将前面的#去掉</span><br><span class="line">  alipay: /images/alipay.png         #将前面的#去掉</span><br><span class="line">  #paypal: /images/paypal.png</span><br><span class="line">  #bitcoin: /images/bitcoin.png</span><br></pre></td></tr></table></figure>
+<p>将制作好的二维码图片放入themes/next/source/images文件里，并命名为wechatpay.png和alipay.png。</p>
+<h2 id="32-添加分享（未完成）">32. 添加分享（未完成）</h2>
+<p>原来的 jiathis share 和 baidushare 已经没有了，现在的是 addthis，但是我注册不了addthis账号 <a href="https://link.zhihu.com/?target=https%3A//www.addthis.com/">AddThis官网</a></p>
+<p>不知道什么原因，我用Firefox不行，下次用Chrome试试，先放着吧！</p>
+<h2 id="33-图片可点击放大查看，放大后可关闭（fancybox可能有点问题，暂时未实现）">33. 图片可点击放大查看，放大后可关闭（fancybox可能有点问题，暂时未实现）</h2>
+<p>打开<strong>主题配置文件</strong>_config.yml，搜索fancybox，设置其值为true：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fancybox: true</span><br></pre></td></tr></table></figure>
+<p>进入到theme/next文件夹下，打开Git Bash，输入如下代码：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone theme-next/theme-next-fancybox3 source/lib/fancybox</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">9AM</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.9am.ren/2021/02/08/%E5%BF%AB%E9%80%9F%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/">http://www.9am.ren/2021/02/08/%E5%BF%AB%E9%80%9F%E7%AB%99%E7%82%B9%E6%90%AD%E5%BB%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.9am.ren" target="_blank">9AM</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/hawk9am/blogimage/raw/master/img/AZEHO`REGJXR[}YV2`}OMPR.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/02/05/test/"><img class="prev-cover" src="https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">图集</div></div></a></div><div class="next-post pull-right"><a href="/2021/02/09/IU%E5%9B%BE%E9%9B%86ins%E6%90%AC%E8%BF%90/"><img class="next-cover" src="https://gitee.com/hawk9am/blogimage/raw/master/img/1612833433699.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">IU——Ins日常搬运</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/01/23/《关于hexo不支持emoji这档子事》/" title="《关于hexo不支持emoji这档子事》"><img class="cover" src="https://gitee.com/hawk9am/blogimage/raw/master/img/p2548452778.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-01-23</div><div class="title">《关于hexo不支持emoji这档子事》</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%E5%92%8C%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">前言和准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">站点配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%BE%8E%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">基础美化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%AE%BE%E7%BD%AE%E8%8F%9C%E5%8D%95"><span class="toc-number">5.</span> <span class="toc-text">1. 设置菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%BE%E7%BD%AE%E5%BB%BA%E7%AB%99%E6%97%B6%E9%97%B4"><span class="toc-number">6.</span> <span class="toc-text">2. 设置建站时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%AE%BE%E7%BD%AE%E5%A4%B4%E5%83%8F"><span class="toc-number">7.</span> <span class="toc-text">3. 设置头像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BD%91%E7%AB%99%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE"><span class="toc-number">8.</span> <span class="toc-text">4. 网站图标设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%AE%BE%E7%BD%AE%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF"><span class="toc-number">9.</span> <span class="toc-text">5. 设置动态背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-canvas-nest-%E9%A3%8E%E6%A0%BC"><span class="toc-number">9.1.</span> <span class="toc-text">5.1 canvas nest 风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-JavaScript-3D-library%E9%A3%8E%E6%A0%BC"><span class="toc-number">9.2.</span> <span class="toc-text">5.2 JavaScript 3D library风格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AE%BE%E7%BD%AE%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87"><span class="toc-number">10.</span> <span class="toc-text">6. 设置背景图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%BB%E9%A1%B5%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E9%98%B4%E5%BD%B1%E6%95%88%E6%9E%9C"><span class="toc-number">11.</span> <span class="toc-text">7. 主页文章添加阴影效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E6%B7%BB%E5%8A%A0%E9%A1%B6%E9%83%A8%E5%8A%A0%E8%BD%BD%E6%9D%A1"><span class="toc-number">12.</span> <span class="toc-text">8. 添加顶部加载条</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E8%AE%BE%E7%BD%AE%E9%A2%84%E8%A7%88%E6%91%98%E8%A6%81"><span class="toc-number">13.</span> <span class="toc-text">9. 设置预览摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E8%AE%BE%E7%BD%AE%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%98%BE%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">14.</span> <span class="toc-text">10. 设置侧边栏显示效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB"><span class="toc-number">15.</span> <span class="toc-text">11. 侧边栏推荐阅读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E6%B7%BB%E5%8A%A0%E7%A4%BE%E4%BA%A4%E9%93%BE%E6%8E%A5"><span class="toc-number">16.</span> <span class="toc-text">12. 添加社交链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E8%AE%BE%E7%BD%AE%E5%8D%9A%E6%96%87%E5%86%85%E9%93%BE%E6%8E%A5%E4%B8%BA%E8%93%9D%E8%89%B2"><span class="toc-number">17.</span> <span class="toc-text">13. 设置博文内链接为蓝色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E6%98%BE%E7%A4%BA%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B0%E5%92%8C%E9%98%85%E8%AF%BB%E6%97%B6%E9%95%BF"><span class="toc-number">18.</span> <span class="toc-text">14. 显示文章字数和阅读时长</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E6%98%BE%E7%A4%BA%E7%AB%99%E7%82%B9%E6%96%87%E7%AB%A0%E6%80%BB%E5%AD%97%E6%95%B0%EF%BC%88%E5%8F%A6%E4%B8%80%E7%A7%8D%E7%BB%9F%E8%AE%A1%E7%AB%99%E7%82%B9%E6%80%BB%E5%AD%97%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%89"><span class="toc-number">19.</span> <span class="toc-text">15. 显示站点文章总字数（另一种统计站点总字数的方法）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E2%80%9D%E6%9C%AC%E6%96%87%E7%BB%93%E6%9D%9F%E2%80%9D%E6%A0%87%E8%AE%B0"><span class="toc-number">20.</span> <span class="toc-text">16. 设置文章末尾”本文结束”标记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E6%B7%BB%E5%8A%A0%E7%89%88%E6%9D%83%E8%AF%B4%E6%98%8E"><span class="toc-number">21.</span> <span class="toc-text">17. 文章末尾添加版权说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-%E6%B7%BB%E5%8A%A0%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1"><span class="toc-number">22.</span> <span class="toc-text">18. 添加访问量统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">23.</span> <span class="toc-text">19. 添加评论功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#19-1-%E6%B3%A8%E5%86%8C%E5%AE%89%E8%A3%85"><span class="toc-number">23.1.</span> <span class="toc-text">19.1 注册安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-2-%E8%AE%BE%E7%BD%AE%E6%8F%90%E9%86%92"><span class="toc-number">23.2.</span> <span class="toc-text">19.2 设置提醒</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-%E6%B7%BB%E5%8A%A0Fork-me-on-Github"><span class="toc-number">24.</span> <span class="toc-text">20. 添加Fork me on Github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%AE%89%E8%A3%85Markdown%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">25.</span> <span class="toc-text">21. 安装Markdown编译器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%AE%89%E8%A3%85RSS%E6%8F%92%E4%BB%B6"><span class="toc-number">26.</span> <span class="toc-text">22. 安装RSS插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%AE%89%E8%A3%85hexo-generator-feed%E6%8F%92%E4%BB%B6"><span class="toc-number">26.1.</span> <span class="toc-text">（1）安装hexo-generator-feed插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E9%85%8D%E7%BD%AEfeed%E4%BF%A1%E6%81%AF"><span class="toc-number">26.2.</span> <span class="toc-text">（2）配置feed信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E9%85%8D%E7%BD%AErss"><span class="toc-number">26.3.</span> <span class="toc-text">（3）配置rss</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E9%A1%B9%E7%9B%AE%E4%B8%BB%E9%A1%B5%E6%B7%BB%E5%8A%A0README"><span class="toc-number">27.</span> <span class="toc-text">23. 项目主页添加README</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%BF%BD%E7%95%A5%E8%A6%81%E7%BC%96%E8%AF%91%E7%9A%84%E6%96%87%E4%BB%B6"><span class="toc-number">28.</span> <span class="toc-text">24. 忽略要编译的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E4%BB%A3%E7%A0%81%E5%9D%97%E6%A0%B7%E5%BC%8F%E8%87%AA%E5%AE%9A%E4%B9%89"><span class="toc-number">29.</span> <span class="toc-text">25. 代码块样式自定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-%E6%94%AF%E6%8C%81mathjax%E5%85%AC%E5%BC%8F"><span class="toc-number">30.</span> <span class="toc-text">26. 支持mathjax公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-%E5%9B%BE%E5%BA%8A%E7%BD%91%E7%AB%99"><span class="toc-number">31.</span> <span class="toc-text">27. 图床网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2"><span class="toc-number">32.</span> <span class="toc-text">28. 本地搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-Hexo%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E5%92%8CGoogle%E6%94%B6%E5%BD%95"><span class="toc-number">33.</span> <span class="toc-text">29. Hexo博客提交百度和Google收录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30-%E5%8D%9A%E6%96%87%E7%BD%AE%E9%A1%B6"><span class="toc-number">34.</span> <span class="toc-text">30. 博文置顶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">34.1.</span> <span class="toc-text">（1）安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E8%AE%BE%E7%BD%AE%E7%BD%AE%E9%A1%B6%E6%A0%87%E5%BF%97"><span class="toc-number">34.2.</span> <span class="toc-text">（2）设置置顶标志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%AD%E6%B7%BB%E5%8A%A0top"><span class="toc-number">34.3.</span> <span class="toc-text">（3）在文章中添加top</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#31-%E6%B7%BB%E5%8A%A0%E6%89%93%E8%B5%8F"><span class="toc-number">35.</span> <span class="toc-text">31. 添加打赏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-%E6%B7%BB%E5%8A%A0%E5%88%86%E4%BA%AB%EF%BC%88%E6%9C%AA%E5%AE%8C%E6%88%90%EF%BC%89"><span class="toc-number">36.</span> <span class="toc-text">32. 添加分享（未完成）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-%E5%9B%BE%E7%89%87%E5%8F%AF%E7%82%B9%E5%87%BB%E6%94%BE%E5%A4%A7%E6%9F%A5%E7%9C%8B%EF%BC%8C%E6%94%BE%E5%A4%A7%E5%90%8E%E5%8F%AF%E5%85%B3%E9%97%AD%EF%BC%88fancybox%E5%8F%AF%E8%83%BD%E6%9C%89%E7%82%B9%E9%97%AE%E9%A2%98%EF%BC%8C%E6%9A%82%E6%97%B6%E6%9C%AA%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="toc-number">37.</span> <span class="toc-text">33. 图片可点击放大查看，放大后可关闭（fancybox可能有点问题，暂时未实现）</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: #708090"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By 9AM</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">学习心得，记录生活</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>
