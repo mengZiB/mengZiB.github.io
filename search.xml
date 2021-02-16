@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vscode,C++和CMake</title>
+      <link href="2021/02/15/vscode,C++%E5%92%8CCMake/"/>
+      <url>2021/02/15/vscode,C++%E5%92%8CCMake/</url>
+      
+        <content type="html"><![CDATA[<p><strong>之前用Clion写C++多文件结构的时候就用过CMake，写Qt的时候看见了QFile。就一直对MakeFile比较迷惑，大   概学了下CMake，这玩意是真猛</strong></p><h2 id="CMake的概念">CMake的概念</h2><p>CMake就是针对上面问题所设计的工具：它首先允许开发者编写一种平台无关的 CMakeList.txt 文件来定制整个编译流程，然后再根据目标用户的平台进一步生成所需的本地化 Makefile 和工程文件，如 Unix 的 Makefile 或 Windows 的 Visual Studio 工程。从而做到“Write once, run everywhere”。显然，CMake 是一个比上述几种 make 更高级的编译配置工具。一些使用 CMake 作为项目架构系统的知名开源项目有 VTK、ITK、KDE、OpenCV、OSG 等。                     -------------------网上找的</p><h2 id="关于vscode-C-CMake的使用">关于vscode C++ CMake的使用</h2><p>下载合适版本</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216213736.png" alt=""></p><p>检查版本</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216214012.png" alt=""></p><p>vsocde 里的 两个插件install</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210215141438.png" alt=""></p><p>首先新建一个测试空文件夹 test ，在vscode打开</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216215326.png" alt=""></p><p>新建test.cpp</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216215450.png" alt=""></p><p>并不能编译，要是能编译就怪了QWQ</p><p>命令行中 <code>CMake:Quick Start</code></p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216215601.png" alt=""></p><p><code>select a kit</code> 选择合适的编译器 我这里是mingGW32</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216215630.png" alt=""></p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216215642.png" alt=""></p><p>然后还是开始快速入门那个命令调出部署下，输入你的工程名字之后会有两个选项，选第二个（我忘了叫啥了）</p><p>会生成 CMakeLists.txt文件，我加了简单的注释，多文件编译直接在这改就行</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216220041.png" alt=""></p><p>然后你可以点下方的（bulid）生成 或者 进入 bulid目录手动执行</p><p><code>PS C:\Users\苶苶\Desktop\test&gt; cd .\build\ PS C:\Users\苶苶\Desktop\test\build&gt; cmake ..</code></p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216220214.png" alt=""></p><p>hello ! 搞定了</p><p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216220241.png" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具使用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> CMake </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML+CSS单身狗指南</title>
       <link href="2021/02/14/HTML/"/>
       <url>2021/02/14/HTML/</url>
