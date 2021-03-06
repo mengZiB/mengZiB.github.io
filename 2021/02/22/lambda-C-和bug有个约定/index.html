@@ -1,0 +1,248 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>lambda,C++和bug有个约定 | 9AM-meng的个人站</title><meta name="keywords" content="Lambda"><meta name="author" content="9AM"><meta name="copyright" content="9AM"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Lambda这玩意儿还挺有意思的，在C++11开始引入这一特性。   概念： Lambda 表达式（lambda expression）是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象（lambda abstraction），是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（注意和数学传统意义上的不同）。   格式：[]()-&gt;ty">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lambda,C++和bug有个约定">
+<meta property="og:url" content="http://www.9am.ren/2021/02/22/lambda-C-%E5%92%8Cbug%E6%9C%89%E4%B8%AA%E7%BA%A6%E5%AE%9A/index.html">
+<meta property="og:site_name" content="9AM-meng的个人站">
+<meta property="og:description" content="Lambda这玩意儿还挺有意思的，在C++11开始引入这一特性。   概念： Lambda 表达式（lambda expression）是一个匿名函数，Lambda表达式基于数学中的λ演算得名，直接对应于其中的lambda抽象（lambda abstraction），是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示闭包（注意和数学传统意义上的不同）。   格式：[]()-&gt;ty">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/hawk9am/blogimage/raw/master/img/20210222183927.png">
+<meta property="article:published_time" content="2021-02-22T10:38:28.000Z">
+<meta property="article:modified_time" content="2021-02-22T10:58:36.530Z">
+<meta property="article:author" content="9AM">
+<meta property="article:tag" content="Lambda">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/hawk9am/blogimage/raw/master/img/20210222183927.png"><link rel="shortcut icon" href="https://gitee.com/hawk9am/blogimage/raw/master/img/IMG_20210208_162317.jpg"><link rel="canonical" href="http://www.9am.ren/2021/02/22/lambda-C-%E5%92%8Cbug%E6%9C%89%E4%B8%AA%E7%BA%A6%E5%AE%9A/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta name="yandex-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#2E8B57&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#2E8B57&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-02-22 18:58:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://gitee.com/hawk9am/blogimage/raw/master/img/1611929733861.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-bars"></i><span> 目录</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/hawk9am/blogimage/raw/master/img/20210222183927.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">9AM-meng的个人站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-bars"></i><span> 目录</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">lambda,C++和bug有个约定</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-22T10:38:28.000Z" title="发表于 2021-02-22 18:38:28">2021-02-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-22T10:58:36.530Z" title="更新于 2021-02-22 18:58:36">2021-02-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/">C++</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Lambda这玩意儿还挺有意思的，在C++11开始引入这一特性。</p>
+<ol>
+<li>
+<p>概念： Lambda 表达式（lambda expression）是一个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/4337265">匿名函数</a>，Lambda表达式基于数学中的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%CE%BB%E6%BC%94%E7%AE%97">λ演算</a>得名，直接对应于其中的lambda抽象（lambda abstraction），是一个匿名函数，即没有函数名的函数。Lambda表达式可以表示<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%97%AD%E5%8C%85/10908873">闭包</a>（注意和数学传统意义上的不同）。</p>
+</li>
+<li>
+<p>格式：<code>[]()-&gt;type&#123;&#125;</code></p>
+<p><code>[]</code>：捕获列表</p>
+<p><code>()</code>：参数列表</p>
+<p><code>-&gt;type</code>：函数反悔类型</p>
+<p><code>&#123;&#125;</code>：Lambda函数体</p>
+<p><code>[ ]或[=]</code>：值传递（该方法不可以修改参数），除非这样写<code>[]()mutable-&gt;type&#123;&#125;</code> 可做值修改的操作，但那块内存里的值不会改。</p>
+<p><code>[&amp;]</code>：引用传递，可做值修改</p>
+<p>混合<code>[= ,&amp; x]  [=x ,&amp;]</code></p>
+<p>简单小例子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> a= <span class="number">0</span>;</span><br><span class="line"><span class="comment">//auto p =[a]()-&gt;int&#123;a++;return 1;&#125;; //error  不允许值做修改</span></span><br><span class="line"><span class="keyword">auto</span> f = [a](<span class="keyword">int</span> b =<span class="number">7</span>) <span class="keyword">mutable</span> -&gt;<span class="keyword">int</span>&#123;a=a+<span class="number">1</span>;<span class="keyword">return</span> b;&#125;; <span class="comment">//bingo！可，但a的值并没有变</span></span><br><span class="line">f();</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;a:&quot;</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////</span></span><br><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">auto</span> p =[&amp;i]()&#123;i++;&#125;; <span class="comment">//值引用</span></span><br><span class="line">p();</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">&quot;i:&quot;</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>图片</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210222185718.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Running] <span class="built_in">cd</span> <span class="string">&quot;c:\Users\苶苶\Desktop\test\&quot; &amp;&amp; g++ main.cpp -o main &amp;&amp; &quot;</span>c:\Users\苶苶\Desktop\<span class="built_in">test</span>\&quot;main</span><br><span class="line">   a:0</span><br><span class="line">i:1</span><br></pre></td></tr></table></figure>
+<p>关于参数是对象这个可以看看微软文档写的，贼意思。</p>
+<p><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210222183927.png" alt=""></p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">9AM</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://www.9am.ren/2021/02/22/lambda-C-%E5%92%8Cbug%E6%9C%89%E4%B8%AA%E7%BA%A6%E5%AE%9A/">http://www.9am.ren/2021/02/22/lambda-C-%E5%92%8Cbug%E6%9C%89%E4%B8%AA%E7%BA%A6%E5%AE%9A/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://www.9am.ren" target="_blank">9AM-meng的个人站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Lambda/">Lambda</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/hawk9am/blogimage/raw/master/img/20210222183927.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/img/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.png" target="_blank"><img class="post-qr-code-img" src="/img/alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/02/20/SQL%E8%AF%AD%E6%B3%95%E5%90%88%E9%9B%86/"><img class="prev-cover" src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210226194936.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MySQL创建数据库和SQL语法合集</div></div></a></div><div class="next-post pull-right"><a href="/2021/03/01/JAVA/"><img class="next-cover" src="https://gitee.com/hawk9am/blogimage/raw/master/img/wallhaven-13pgxw.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JAVA基础学习</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://gitee.com/hawk9am/blogimage/raw/master/img/1611929733861.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">9AM</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">17</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/mengZiB"><i class="fab fa-github"></i><span>Github代码仓库</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/mengZiB" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/hawk9am/blogimage/raw/master/img/IMG_20210209_224351.jpg" target="_blank" title="Wechat"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">并没有什么公告</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/03/04/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bvue-java%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" title="从零开始vue+spring boot前后端分离项目实战"><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210304175005.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="从零开始vue+spring boot前后端分离项目实战"/></a><div class="content"><a class="title" href="/2021/03/04/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8Bvue-java%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/" title="从零开始vue+spring boot前后端分离项目实战">从零开始vue+spring boot前后端分离项目实战</a><time datetime="2021-03-04T08:09:50.000Z" title="发表于 2021-03-04 16:09:50">2021-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/01/JAVA/" title="JAVA基础学习"><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/wallhaven-13pgxw.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAVA基础学习"/></a><div class="content"><a class="title" href="/2021/03/01/JAVA/" title="JAVA基础学习">JAVA基础学习</a><time datetime="2021-03-01T12:31:49.000Z" title="发表于 2021-03-01 20:31:49">2021-03-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/22/lambda-C-%E5%92%8Cbug%E6%9C%89%E4%B8%AA%E7%BA%A6%E5%AE%9A/" title="lambda,C++和bug有个约定"><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210222183927.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="lambda,C++和bug有个约定"/></a><div class="content"><a class="title" href="/2021/02/22/lambda-C-%E5%92%8Cbug%E6%9C%89%E4%B8%AA%E7%BA%A6%E5%AE%9A/" title="lambda,C++和bug有个约定">lambda,C++和bug有个约定</a><time datetime="2021-02-22T10:38:28.000Z" title="发表于 2021-02-22 18:38:28">2021-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/20/SQL%E8%AF%AD%E6%B3%95%E5%90%88%E9%9B%86/" title="MySQL创建数据库和SQL语法合集"><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210226194936.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL创建数据库和SQL语法合集"/></a><div class="content"><a class="title" href="/2021/02/20/SQL%E8%AF%AD%E6%B3%95%E5%90%88%E9%9B%86/" title="MySQL创建数据库和SQL语法合集">MySQL创建数据库和SQL语法合集</a><time datetime="2021-02-20T13:17:10.000Z" title="发表于 2021-02-20 21:17:10">2021-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/15/vscode,C++%E5%92%8CCMake/" title="vscode,C++和CMake"><img src="https://gitee.com/hawk9am/blogimage/raw/master/img/20210216220041.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vscode,C++和CMake"/></a><div class="content"><a class="title" href="/2021/02/15/vscode,C++%E5%92%8CCMake/" title="vscode,C++和CMake">vscode,C++和CMake</a><time datetime="2021-02-15T06:15:48.000Z" title="发表于 2021-02-15 14:15:48">2021-02-15</time></div></div></div></div></div></div></main><footer id="footer" style="background: #708090"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By 9AM</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">学习心得，记录生活</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>
